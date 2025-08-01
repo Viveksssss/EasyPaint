@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>resources/backBtn.png</file>
+        <file>resources/closeBtn.png</file>
+        <file>resources/ellipseBtn.png</file>
+        <file>resources/frontBtn.png</file>
+        <file>resources/lineBtn.png</file>
+        <file>resources/rotateLeftBtn.png</file>
+        <file>resources/rotateRightBtn.png</file>
+        <file>resources/rectangleBtn.png</file>
+        <file>resources/textBtn.png</file>
+        <file>resources/triangleBtn.png</file>
+        <file>resources/zoomInBtn.png</file>
+        <file>resources/zoomOutBtn.png</file>
+        <file>resources/deleteBtn.png</file>
+        <file>resources/resetBtn.png</file>
+        <file>resources/arrow.png</file>
+    </qresource>
+</RCC>
