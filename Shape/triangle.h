@@ -1,16 +1,15 @@
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
+#ifndef TRIANGLE_H
+#define TRIANGLE_H
 
-#include "shape.h"
+#include <shape.h>
 #include <QColor>
-#include "Micro.h"
 
-class Rectangle : public Shape
+class Triangle : public Shape
 {
 public:
-    Rectangle(const double&x,const double&y,const double&w,const double&h);
-    Rectangle();
-    ~Rectangle() = default;
+    Triangle();
+    Triangle(const double&x,const double&y,const double&w,const double&h);
+    ~Triangle() = default;
 public:
     inline void setStartX(const double&x){m_StartX = x;}
     inline void setStartY(const double&y){m_StartY = y;}
@@ -20,6 +19,7 @@ public:
     inline const double& getStartY(){return m_StartY;}
     inline const double& getWidth(){return m_Width;}
     inline const double& getHeight(){return m_Height;}
+
 private:
     double m_StartX;
     double m_StartY;
@@ -27,10 +27,11 @@ private:
     double m_Height;
     QColor m_Color;
 
+
     // Shape interface
 public:
     QJsonObject toJson() const override;
     bool fromJson(const QJsonObject &json) override;
 };
 
-#endif // RECTANGLE_H
+#endif // TRIANGLE_H

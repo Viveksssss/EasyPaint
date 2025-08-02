@@ -36,6 +36,7 @@ else()
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         find_package(Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
         add_executable(Paint
             ${PROJECT_SOURCES}
@@ -45,11 +46,12 @@ else()
             Shape/shape.h Shape/shape.cpp
             Shape/rectangle.h Shape/rectangle.cpp
             staticdata.h staticdata.cpp
-            ellipse.h ellipse.cpp
-            triangle.h triangle.cpp
-            line.h line.cpp
-            text.h text.cpp
-            cursor.h cursor.cpp
+            Shape/ellipse.h Shape/ellipse.cpp
+            Shape/triangle.h Shape/triangle.cpp
+            Shape/line.h Shape/line.cpp
+            Shape/text.h Shape/text.cpp
+            Shape/cursor.h Shape/cursor.cpp
+            contenteditor.h contenteditor.cpp
         )
     endif()
 endif()
@@ -60,6 +62,7 @@ target_include_directories(Paint PRIVATE
 )
 
 target_link_libraries(Paint PRIVATE Qt${QT_VERSION_MAJOR}::Widgets OpenGL)
+target_link_libraries(Paint PRIVATE Qt5::Widgets)
 target_link_libraries(Paint PRIVATE Qt5::Widgets)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

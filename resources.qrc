@@ -15,5 +15,8 @@
         <file>resources/deleteBtn.png</file>
         <file>resources/resetBtn.png</file>
         <file>resources/arrow.png</file>
+        <file>resources/saveBtn.png</file>
+        <file>resources/loadBtn.png</file>
+        <file>resources/clear.png</file>
     </qresource>
 </RCC>

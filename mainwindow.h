@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QToolButton>
 #include <QPropertyAnimation>
+#include "staticdata.h"
 
 #include "Micro.h"
 QT_BEGIN_NAMESPACE
@@ -39,12 +40,17 @@ private:
     QToolButton*m_ZoomOutBtn;
     QToolButton*m_FrontBtn;
     QToolButton*m_BackBtn;
+    QToolButton*m_SaveBtn;
+    QToolButton*m_LoadBtn;
+    QToolButton*m_ClearBtn;
 
     QToolButton*m_DeleteBtn;
     QToolButton*m_CloseBtn;
 
     DrawWidget*m_DrawWidget;
     QPropertyAnimation *animation;
+
+    QString m_FilePath;
 
     bool m_MouseInArea;
     bool m_LeftIsVisible;
@@ -53,6 +59,8 @@ private:
     void init();
     void initResource();
     void initButton();
+    void saveFile();
+    void loadFile();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;

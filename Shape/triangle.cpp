@@ -1,15 +1,25 @@
-#include "rectangle.h"
+#include "triangle.h"
 
-Rectangle::Rectangle():m_StartX(0)
-,m_StartY(0)
-,m_Height(0)
-,m_Width(0)
 
+Triangle::Triangle():
+    m_Height(0),
+    m_Width(0),
+    m_StartX(0),
+    m_StartY(0)
 {
 
 }
 
-QJsonObject Rectangle::toJson() const
+Triangle::Triangle(const double &x, const double &y, const double &w, const double &h):
+    m_Height(h),
+    m_Width(w),
+    m_StartX(x),
+    m_StartY(y)
+{
+
+}
+
+QJsonObject Triangle::toJson() const
 {
     QJsonObject data;
     data["x"] = m_StartX;
@@ -18,15 +28,15 @@ QJsonObject Rectangle::toJson() const
     data["height"] = m_Height;
 
     return {
-        {"type","rectangle"},
+        {"type","triangle"},
         {"data",data}
     };
 }
 
-bool Rectangle::fromJson(const QJsonObject &json)
+bool Triangle::fromJson(const QJsonObject &json)
 {
     QJsonObject data = json["data"].toObject();
-    if(data.isEmpty()){
+    if(!data.isEmpty()){
         double x = data["x"].toDouble();
         double y = data["y"].toDouble();
         double height = data["height"].toDouble();
@@ -39,12 +49,3 @@ bool Rectangle::fromJson(const QJsonObject &json)
     }
     return false;
 }
-
-Rectangle::Rectangle(const double &x, const double &y, const double &w, const double &h)
-{
-    this->m_StartX = x;
-    this->m_StartY = y;
-    this->m_Height = h;
-    this->m_Width = w;
-}
-
